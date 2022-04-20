@@ -1,3 +1,6 @@
+# dog-walk-planner
+This app allows for a user to look up weather for the week ahead and pick the best days to walk one's dog
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
