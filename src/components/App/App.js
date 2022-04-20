@@ -1,6 +1,8 @@
 import React from 'react'
 import '../App/App.css';
+import Day from '../Day/Day'
 import Form from '../Form/Form'
+
 
 class App extends React.Component {
 
@@ -11,9 +13,10 @@ class App extends React.Component {
 
   render () {
       return (
-        <div className="App">
-          <Form></Form>
-        </div>
+        <main className="App">
+          <p>I want to walk my dog <Form /> days this week.</p>
+          <Day />
+        </main>
       );
   }
 }
