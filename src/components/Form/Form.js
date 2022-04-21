@@ -1,32 +1,31 @@
-import React from 'react'
-import './Form.css'
+import React from "react";
+import "./Form.css";
 
 class Form extends React.Component {
   constructor() {
-    super()
-    this.state = {}
+    super();
+    this.state = { numberOfDays: 0 };
   }
 
-  render () {
+  handleChange = (event) => {
+    this.setState({ numberOfDays: [event.target.value] });
+  };
+
+  render() {
     return (
-      // <form className="form">
-        <select
-          id="number-of-days"
+      <form className="numDaysForm" onChange={event => this.handleChange(event)}>
+        <p className="form-label">Number of days I want to walk my dog this week:</p>
+        <input
+          type="number"
+          placeholder="1-7 Days"
+          className="number-of-days"
           name="number-of-days"
-          placeholder="#"
-        >
-          <option value="">#</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-        </select>
-        // </form>
-    )
+          min="1"
+          max="7"
+        />
+      </form>
+    );
   }
 }
 
-export default Form
+export default Form;
