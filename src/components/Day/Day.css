@@ -1,0 +1,13 @@
+.day-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: fit-content;
+  width: 12.5%;
+  background-color: rgba(11, 127, 171, .8);
+  border-radius: 10px;
+  margin: .2rem;
+  padding: .2rem;
+}
