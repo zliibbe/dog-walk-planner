@@ -1,1 +1,16 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
 
+.header, .site-overview, .form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-overview {
+  display: flex;
+  justify-content: center;
+  width: 55%;
+}
