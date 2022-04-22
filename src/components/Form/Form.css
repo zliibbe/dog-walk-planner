@@ -1,4 +1,14 @@
 .weekly-form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.numDaysForm {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.number-of-days {
+  width: 6rem;
 }

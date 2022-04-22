@@ -1,0 +1,9 @@
+.weekly-calendar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+}

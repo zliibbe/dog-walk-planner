@@ -1,1 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
 
+.site-overview {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .site-overview {
+  
+} */

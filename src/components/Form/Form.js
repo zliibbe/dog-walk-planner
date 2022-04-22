@@ -1,40 +1,31 @@
-import React from 'react'
-import './Form.css'
+import React from "react";
+import "./Form.css";
 
 class Form extends React.Component {
   constructor() {
-    super()
-    this.state = {}
+    super();
+    this.state = { numberOfDays: 0 };
   }
 
-  render () {
+  handleChange = (event) => {
+    this.setState({ numberOfDays: [event.target.value] });
+  };
+
+  render() {
     return (
-      <form className="weekly-form">
-        <label htmlFor="monday-checkbox">Monday</label>
-        <input id="monday" name="monday-checkbox" value="Monday" type="checkbox"></input>
-        
-        <label htmlFor="tuesday-checkbox">Tuesday</label>
-        <input id="tuesday" name="tuesday-checkbox" value="Tuesday" type="checkbox"></input>
-
-        <label htmlFor="wednesday-checkbox">Wednesday</label>
-        <input id="wednesday" name="wednesday-checkbox" value="Wednesday"  type="checkbox"></input>
-
-        <label htmlFor="thursday-checkbox">Thursday</label>
-        <input id="thursday" name="thursday-checkbox" value="Thursday"  type="checkbox"></input>
-
-        <label htmlFor="friday-checkbox">Friday</label>
-        <input id="friday" name="friday-checkbox" value="Friday"  type="checkbox"></input>
-
-        <label htmlFor="saturday-checkbox">Saturday</label>
-        <input id="saturday" name="saturday-checkbox" value="Saturday"  type="checkbox"></input>
-
-        <label htmlFor="sunday-checkbox">Sunday</label>
-        <input id="sunday" name="sunday-checkbox" value="Sunday"  type="checkbox"></input>
-
-        <input type="submit" value="Submit"></input>
+      <form className="numDaysForm" onChange={event => this.handleChange(event)}>
+        <p className="form-label">Number of days I want to walk my dog this week:</p>
+        <input
+          type="number"
+          placeholder="1-7 Days"
+          className="number-of-days"
+          name="number-of-days"
+          min="1"
+          max="7"
+        />
       </form>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;
