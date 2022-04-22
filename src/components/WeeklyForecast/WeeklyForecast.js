@@ -3,7 +3,6 @@ import Day from '../Day/Day'
 import './WeeklyForecast.css'
 
 const WeeklyForecast = ({ forecast, selectedDays, selectDay }) => {
- 
 const weatherDays= forecast.map (day =>{
   
   return <Day 
