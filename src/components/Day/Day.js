@@ -4,7 +4,7 @@ var dayjs = require('dayjs')
 
 const Day = ({date, imageSrc, iconText, minTemp, maxTemp, avgTemp, selectDay}) => {
   return (
-    <div className="day-container" onClick={event => selectDay(date)}>
+    <div className="day-container" tabIndex={0} onClick={event => selectDay(date)}>
       <p className="day-of-week">{dayjs(date).format('dddd')}</p>
       <p className="date">{dayjs(date).format('MMMM D')}</p>
       <img className= "icon" src={imageSrc} alt="weather-icon"></img>
