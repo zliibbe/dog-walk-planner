@@ -9,6 +9,7 @@ class Form extends React.Component {
 
   handleChange = (event) => {
     this.setState({ numberOfDays: [event.target.value] });
+    this.props.addNumber(event.target.value)
   };
 
   render() {
@@ -18,7 +19,7 @@ class Form extends React.Component {
         <input
           type="number"
           placeholder="1-7 Days"
-          className="number-of-days"
+          className="number-of-days-form"
           name="number-of-days"
           min="1"
           max="7"
