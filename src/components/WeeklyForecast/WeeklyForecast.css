@@ -5,6 +5,7 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  margin: 0 2rem;
 }
 
 .day-container {
@@ -22,8 +23,25 @@
   padding: .2rem;
 }
 
+.recommended {
+  border: 2px dashed yellow;
+
+}
+
+.recommended::before {
+  content: "❤️"
+}
+
 .active {
   opacity: 1;
   background-color: rgba(11, 126, 171, 1);
   border: 2px solid white;
+}
+
+.error-msg {
+  display: flex;
+  justify-content: center;
+  color: red;
+  margin: -1rem 0 1rem 18rem;
+  height: 24px;
 }
