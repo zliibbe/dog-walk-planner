@@ -14,19 +14,14 @@ class WeeklyForecast extends React.Component {
     })
   }
 
-  callTwoFunctions = (event) => {
-    this.props.selectDay(event.currentTarget.id)
-    
-  }
-
   render() {
-
     const weatherDays = this.props.forecast.map (day =>{
       const dayKey = day.date
-      const foundSelectedDay = this.props.selectedDays.findIndex(activeDay => activeDay.date === dayKey)
-
+      const findSelectedDay = this.props.selectedDays.findIndex(activeDay => activeDay.date === dayKey)
+      const findRecommendedDay = this.props.recommendedDays.findIndex(recDay => recDay.date == dayKey)
+      
       return (
-        <div className={`day-container ${(foundSelectedDay === -1) ? '' : 'active'}`} key={day.date} id={day.date} tabIndex={0} onClick={(event) => this.callTwoFunctions(event)}>
+        <div className={`day-container ${(findSelectedDay === -1) ? '' : 'active'} ${(findRecommendedDay === -1) ? '' : 'recommended'}`} key={day.date} id={day.date} tabIndex={0} onClick={(event) => this.props.selectDay(event.currentTarget.id)}>
           <p className="day-of-week">{dayjs(day.date).format('dddd')}</p>
           <p className="date">{dayjs(day.date).format('MMMM D')}</p>
           <img className= "icon" src={day.day.condition.icon} alt="weather-icon"></img>
@@ -41,6 +36,11 @@ class WeeklyForecast extends React.Component {
     return (
       <section className="weekly-calendar">
         {weatherDays}
+        <div 
+          className="add-to-my-walks" 
+          onClick={() => {this.props.addFavoriteDays()}}>
+            Add to My Walks
+        </div>
       </section>
     )
   }
