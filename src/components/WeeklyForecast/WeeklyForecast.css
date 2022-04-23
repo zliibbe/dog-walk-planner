@@ -6,3 +6,24 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+
+.day-container {
+  opacity: .8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+  width: 55%;
+  background-color: rgba(11, 127, 171, .8);
+  border-radius: 10px;
+  margin: .2rem;
+  padding: .2rem;
+}
+
+.active {
+  opacity: 1;
+  background-color: rgba(11, 126, 171, 1);
+  border: 2px solid white;
+}
