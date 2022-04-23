@@ -3,8 +3,13 @@
   flex-direction: column;
 }
 
+body {
+  background-color: rgba(70, 110, 84, .5);
+}
+
 .site-overview {
   display: flex;
+  flex-direction: column;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -12,12 +17,46 @@
 }
 
 .header {
+  position: relative;
+  left: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  background-color: rgba(70, 110, 84, .5);
+  border-radius: 10px;
+  padding: .7rem;
 }
 
-/* .site-overview {
-  
-} */
+.site-overview {
+  margin: 2rem;
+  border-radius: 10px;
+  padding: .7rem;
+  background-color: rgba(227, 235, 229, .7);
+}
+
+.title {
+  margin-right: 3rem;
+}
+
+.background-photo {
+  width: 100%;
+  height: 20%;
+  background: url(https://images.unsplash.com/photo-1534959418084-53d6c8ab01e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 50% 50%;
+}
+
+.number-of-days {
+  width: 11rem;
+  margin-left: 3rem;
+}
+
+.user-display-day-number {
+  display: flex;
+  justify-content: center;
+}
