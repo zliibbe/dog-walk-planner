@@ -13,20 +13,35 @@ class App extends React.Component {
       forecast: [],
       numberOfDays: 0,
       selectedDays: [],
+      recommendedDays: [],
       error: false
     };
   }
   
-
+  recommendDays = (numOfDays) => {
+    const copyForecastDays = [...this.state.forecast]
+    copyForecastDays.sort((a,b) => a.day.avgtemp_f - b.day.avgtemp_f)
+    copyForecastDays.splice(0, (7-numOfDays))
+    this.setState({ recommendedDays: copyForecastDays})
+    return
+  }
 
    selectDay = (date) => {
     if(this.state.numberOfDays === 0){
-      console.log("error: must complete form")//this will eventually need to display to user
+      this.setState({ error: true })
       return
     }
+
+    if(this.state.selectedDays.find(day => day.date === date)) {
+      this.setState({
+        selectedDays : (this.state.selectedDays.filter(day => day.date!== date))
+      })
+      return
+    }
+    
     console.log("You clicked: ", date);
     const dayCard = this.state.forecast.find(day => day.date === date);
-    // if(!this.state.selectedDays.includes(date)){ ERROR HANDLING
+    // if(!this.state.selectedDays.includes(date)){ ERROR HANDLING?
       if (this.state.selectedDays.length < this.state.numberOfDays) {
         this.setState({ selectedDays: [...this.state.selectedDays, dayCard] })
       } else if (this.state.selectedDays.length === parseInt(this.state.numberOfDays)) {
@@ -34,8 +49,16 @@ class App extends React.Component {
         updatedDays.shift();
         this.setState({ selectedDays: [...updatedDays, dayCard] })
       }
-     
   };
+
+  addFavoriteDays = () => {
+    this.setState({
+      favoriteDays: this.state.selectedDays,
+      numberOfDays: 0,
+      selectedDays: [],
+      recommendedDays: [],
+    })
+  }
 
   addNumber = (num) => {
     this.setState({ numberOfDays: num })
@@ -87,24 +110,34 @@ class App extends React.Component {
                     </p>
                   </div>
 
-                  <Form addNumber={this.addNumber}/>
+                    <Form addNumber={this.addNumber} error={this.state.error} recommendDays={this.recommendDays}/>
+
                   <div className="user-display-day-number">
                     {this.state.numberOfDays!==0 && <p className="number-of-days">Please select {this.state.numberOfDays} days: </p>}
+                     <p className="error-msg" onMouseOver={()=> this.setState({error: false})}>{this.state.error && 'Please enter number of days.'}</p>
                     <div></div>
                   </div>
                   <div className="weekly-forecast">
                     <WeeklyForecast
                       forecast={this.state.forecast}
                       selectedDays={this.state.selectedDays}
+                      recommendedDays={this.state.recommendedDays}
                       selectDay={this.selectDay}
+                      addFavoriteDays={this.addFavoriteDays}
                     />
                   </div>
                 </React.Fragment>
               );
             }}
           ></Route>
-          <Route exact path="/myWalks" render={() => {}}>
-            <MyWalks numberOfDays={this.state.numberOfDays} selectedDays={this.state.selectedDays} />
+
+          <Route 
+            exact path="/myWalks" 
+            render={() => {}}
+          >
+            <MyWalks 
+            numberOfDays={this.state.numberOfDays} 
+            favoriteDays={this.state.favoriteDays} />
           </Route>
         </Switch>
       </main>
