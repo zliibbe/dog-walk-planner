@@ -1,28 +1,26 @@
 import React from "react"
 import './MyWalks.css'
 import { Route, NavLink } from 'react-router-dom';
+var dayjs = require('dayjs')
 
-const MyWalks = ({ selectedDays, numberOfDays }) => {
-  console.log("selectedDays: ", selectedDays)
-  console.log("numberOfDays: ", numberOfDays);
-  const days = selectedDays.map(day => {
-    // return <Day 
-    //         date={day.date}
-    //         imageSrc={day.day.condition.icon}
-    //         iconText={day.day.condition.text}
-    //         maxTemp={day.day.maxtemp_f}
-    //         minTemp={day.day.mintemp_f}
-    //         avgTemp={day.day.avgtemp_f}
-    //         key={day.date}
-    //         // selectDay={selectDay}
-    //      />
+const MyWalks = ({ favoriteDays }) => {
+  const days = favoriteDays.map(day => {
+      return <div className={'day-container'} key={day.date} id={day.date} tabIndex={0} onClick={(event) => this.callTwoFunctions(event)}>
+          <p className="day-of-week">{dayjs(day.date).format('dddd')}</p>
+          <p className="date">{dayjs(day.date).format('MMMM D')}</p>
+          <img className= "icon" src={day.day.condition.icon} alt="weather-icon"></img>
+          <p className="icon-text">{day.day.condition.text}</p>
+          <p className="temp-high">High: {day.day.maxtemp_f}°</p>
+          <p className="temp-low">Low: {day.day.mintemp_f}°</p>
+          <p className="avg-temp">Avg: {day.day.avgtemp_f}°</p>
+        </div> 
   })
   return(
   <div className="my-walk">
     <section className="my-walks-container">
       <section className="my-walks-header">
         <h1 className="title">Dog Walk Planner</h1>
-        <p className="walking-days">I'm walking {`${numberOfDays}`} days this week.</p>
+        <p className="walking-days">I'm walking {`${favoriteDays.length}`} days this week.</p>
       </section>
       <section className="my-walks-display">
         {days}
