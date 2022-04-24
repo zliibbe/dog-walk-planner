@@ -1,12 +1,9 @@
 import React from "react";
 import "../App/App.css";
-import Form from "../Form/Form";
 import WeeklyForecast from "../WeeklyForecast/WeeklyForecast";
 import MyWalks from "../MyWalks/MyWalks";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Layout from '../Layout/Layout'
-// require('dotenv').config()
-
 class App extends React.Component {
   constructor() {
     super();
@@ -27,6 +24,10 @@ class App extends React.Component {
     return
   }
 
+  resetError = () => {
+    this.setState({ error: false })
+  }
+
    selectDay = (date) => {
     if(this.state.numberOfDays === 0){
       this.setState({ error: true })
@@ -40,9 +41,7 @@ class App extends React.Component {
       return
     }
     
-    console.log("You clicked: ", date);
-    const dayCard = this.state.forecast.find(day => day.date === date);
-    // if(!this.state.selectedDays.includes(date)){ ERROR HANDLING?
+    const dayCard = this.state.forecast.find(day => day.date === date)
       if (this.state.selectedDays.length < this.state.numberOfDays) {
         this.setState({ selectedDays: [...this.state.selectedDays, dayCard] })
       } else if (this.state.selectedDays.length === parseInt(this.state.numberOfDays)) {
@@ -53,6 +52,11 @@ class App extends React.Component {
   };
 
   addFavoriteDays = () => {
+    // error Handling for btn click 0130
+    if(!this.state.selectedDays || this.state.selectedDays !== numberOfDays){
+      console.log("Please Select Day")
+      return
+    }
     this.setState({
       favoriteDays: this.state.selectedDays,
       numberOfDays: 0,
@@ -92,34 +96,38 @@ class App extends React.Component {
     return (
       <main className="App">
         <Layout>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return (
-                    <WeeklyForecast
-                      forecast={this.state.forecast}
-                      selectedDays={this.state.selectedDays}
-                      recommendedDays={this.state.recommendedDays}
-                      selectDay={this.selectDay}
-                      addFavoriteDays={this.addFavoriteDays}
-                      addNumber={this.addNumber} 
-                      error={this.state.error} recommendDays={this.recommendDays}
-                    />
-              );
-            }}
-          ></Route>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return (
+                      <WeeklyForecast
+                        forecast={this.state.forecast}
+                        numberOfDays={this.state.numberOfDays}
+                        selectedDays={this.state.selectedDays}
+                        recommendedDays={this.state.recommendedDays}
+                        selectDay={this.selectDay}
+                        addFavoriteDays={this.addFavoriteDays}
+                        addNumber={this.addNumber} 
+                        error={this.state.error} 
+                        resetError={this.resetError}
+                        recommendDays={this.recommendDays}
+                      />
+                );
+              }}
+            ></Route>
 
-          <Route 
-            exact path="/myWalks" 
-            render={() => {}}
-          >
-            <MyWalks 
-            numberOfDays={this.state.numberOfDays} 
-            favoriteDays={this.state.favoriteDays} />
-          </Route>
-        </Switch>
+            <Route 
+              exact path="/myWalks" 
+              render={() => {
+                return (<MyWalks 
+                favoriteDays={this.state.favoriteDays}
+                />)
+              }}
+            >
+            </Route>
+          </Switch>
         </Layout>
       </main>
     );
