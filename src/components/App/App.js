@@ -4,6 +4,7 @@ import Form from "../Form/Form";
 import WeeklyForecast from "../WeeklyForecast/WeeklyForecast";
 import MyWalks from "../MyWalks/MyWalks";
 import { Switch, Route, NavLink } from "react-router-dom";
+import Layout from '../Layout/Layout'
 // require('dotenv').config()
 
 class App extends React.Component {
@@ -90,43 +91,22 @@ class App extends React.Component {
   render() {
     return (
       <main className="App">
+        <Layout>
         <Switch>
           <Route
             exact
             path="/"
             render={() => {
               return (
-                <React.Fragment>
-                  <div className="background-photo">
-                    <section className="header">
-                      <h1 className="title">Dog Walk Planner</h1>
-                      <NavLink to="/myWalks" className="nav">My Walks</NavLink>
-                    </section>
-                    <p className="site-overview">
-                      You're busy, but want the best for your dog. But you don't
-                      know when, with your limited time, it's best walk your dog? Use this site's automated
-                      suggestions to provide you with of optimal walking weather
-                      for any given week.
-                    </p>
-                  </div>
-
-                    <Form addNumber={this.addNumber} error={this.state.error} recommendDays={this.recommendDays}/>
-
-                  <div className="user-display-day-number">
-                    {this.state.numberOfDays!==0 && <p className="number-of-days">Please select {this.state.numberOfDays} days: </p>}
-                     <p className="error-msg" onMouseOver={()=> this.setState({error: false})}>{this.state.error && 'Please enter number of days.'}</p>
-                    <div></div>
-                  </div>
-                  <div className="weekly-forecast">
                     <WeeklyForecast
                       forecast={this.state.forecast}
                       selectedDays={this.state.selectedDays}
                       recommendedDays={this.state.recommendedDays}
                       selectDay={this.selectDay}
                       addFavoriteDays={this.addFavoriteDays}
+                      addNumber={this.addNumber} 
+                      error={this.state.error} recommendDays={this.recommendDays}
                     />
-                  </div>
-                </React.Fragment>
               );
             }}
           ></Route>
@@ -140,6 +120,7 @@ class App extends React.Component {
             favoriteDays={this.state.favoriteDays} />
           </Route>
         </Switch>
+        </Layout>
       </main>
     );
   }
