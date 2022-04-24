@@ -53,7 +53,7 @@ class WeeklyForecast extends React.Component {
         {this.props.error && 'Please enter number of days.'}</p>
       </div>
       {this.props.numberOfDays!==0 && <div className='instructions-add-walks-button'>
-           <p className="number-of-days">Please select {this.props.numberOfDays} days below. (A ⭐️  indicates a recommended day): </p>
+           <p className="number-of-days">Please select {this.props.numberOfDays} days below ( ⭐️  indicates a recommended day) and add to My Walks: </p>
           <div 
             className="add-to-my-walks-button" 
             onClick={() => {this.props.addFavoriteDays()}}>
