@@ -4,16 +4,18 @@ var dayjs = require('dayjs')
 
 const MyWalks = ({ favoriteDays }) => {
   let days;  
-    if(!favoriteDays.length) {
-      days = (<h1>You have not added any days yet. Go back to the main page to add days.</h1>)
+    if(!favoriteDays || favoriteDays.length===0) {
+      days = (<h1 className="no-days-msg">You have not added any days yet. Go home to add days.</h1>)
     }
     else {
       days = favoriteDays.map(day => {
         return (
-            <div className="day-container" key={day.date} id={day.date} tabIndex={0} onClick={(event) => this.callTwoFunctions(event)}>
-            <p className="day-of-week">{dayjs(day.date).format('dd').toUpperCase()}</p>
-            <p className="month">{dayjs(day.date).format('MMMM').toUpperCase()}</p>
-            <p className="date">{dayjs(day.date).format('DD')}</p>
+            <div className="day-container" key={day.date} id={day.date} tabIndex={0}>
+            <div className='date-display'>
+              <p className="day-of-week">{dayjs(day.date).format('dd').toUpperCase()}</p>
+              <p className="month">{dayjs(day.date).format('MMMM').toUpperCase()}</p>
+              <p className="date">{dayjs(day.date).format('DD')}</p>
+            </div>
             <hr />  
             <img className= "icon" src={day.day.condition.icon} alt="weather-icon"></img>
             <p className="icon-text">{day.day.condition.text}</p>
