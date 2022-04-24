@@ -51,22 +51,23 @@ class App extends React.Component {
       }
   };
 
+  addNumber = (num) => {
+    this.setState({ numberOfDays: num })
+  }
+
   addFavoriteDays = () => {
-    // error Handling for btn click 0130
-    if(!this.state.selectedDays || this.state.selectedDays !== numberOfDays){
-      console.log("Please Select Day")
-      return
-    }
+    // error Handling for btn click (@0130)
+    // if(!this.state.selectedDays || this.state.selectedDays !== this.state.numberOfDays){
+    //   console.log("Please Select Day")
+    //   return
+    // }
     this.setState({
       favoriteDays: this.state.selectedDays,
       numberOfDays: 0,
       selectedDays: [],
       recommendedDays: [],
     })
-  }
 
-  addNumber = (num) => {
-    this.setState({ numberOfDays: num })
   }
 
   fetchSevenDayForecast = () => {
@@ -109,10 +110,10 @@ class App extends React.Component {
                         recommendedDays={this.state.recommendedDays}
                         selectDay={this.selectDay}
                         addFavoriteDays={this.addFavoriteDays}
+                        recommendDays={this.recommendDays}
                         addNumber={this.addNumber} 
                         error={this.state.error} 
                         resetError={this.resetError}
-                        recommendDays={this.recommendDays}
                       />
                 );
               }}
