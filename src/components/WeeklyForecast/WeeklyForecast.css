@@ -8,6 +8,12 @@
   margin: 0 2rem;
 }
 
+.active.day-container {
+  opacity: 1;
+  background-color: rgba(11, 126, 171, 1);
+  border: 2px solid white;
+}
+
 .day-container {
   opacity: .8;
   display: flex;
@@ -23,11 +29,27 @@
   padding: .2rem;
 }
 
+.day-container:hover,
+.day-container:focus,
+.day-container:focus-visible {
+  transform: scale(1.03);
+}
+
+.add-to-my-walks-button:hover,
+.add-to-my-walks-button:focus,
+.add-to-my-walks-button:focus-visible {
+  border: 2px solid white;
+  transform: scale(1.03);
+  margin-bottom: -0.1em;
+}
+
+
 .number-of-days {
   display: flex;
   align-items: baseline;
   width: 100%;
   text-align: center;
+  margin-left: 0.7em;
 }
 
 .recommended {
@@ -38,25 +60,18 @@
   content: "⭐️"
 }
 
-.active.day-container {
-  opacity: 1;
-  background-color: rgba(11, 126, 171, 1);
-  border: 2px solid white;
-}
-
 .day-of-week, 
 .month, 
 .date {
   display: flex;
   text-align: left;
   width: 100%;
-  padding-left: 1em;
+  font-family: 'Lato', sans-serif;
 }
 
 hr {
   size: 8;
   width: 85%;
-  color: black;
 }
 
 .error-msg {
@@ -80,10 +95,6 @@ hr {
   border-radius: 10px;
   background-color: rgba(70, 110, 84, 0.7);
   width: 20rem;
-  border: 1px solid black;
   padding: 5px;
-}
-
-.add-to-my-walks-button:hover {
-  box-shadow: 0 0 0 3px black;
+  margin-right: 0.7em;
 }
