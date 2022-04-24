@@ -1,6 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
+  width: 100%
 }
 
 body {
@@ -17,14 +18,12 @@ body {
 }
 
 .header {
-  position: relative;
-  left: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(70, 110, 84, .5);
+  background-color: rgba(227, 235, 229, .7);
   border-radius: 10px;
   padding: .7rem;
 }
@@ -44,18 +43,13 @@ body {
   width: 100%;
   background: url(https://images.unsplash.com/photo-1600354279787-0a726615ef44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80);
   background-repeat: no-repeat;
-  background-position-y: -400px;/*leave pos-y and chacnge pos-x on break points*/
+  background-position-y: -400px;/*leave pos-y and change pos-x on break points*/
   height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 0 0 50% 50%;
-}
-
-.number-of-days {
-  width: 11rem;
-  margin-left: 3rem;
 }
 
 .user-display-day-number {
