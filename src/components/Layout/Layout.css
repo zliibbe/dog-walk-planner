@@ -1,0 +1,45 @@
+.nav {
+  border: none;
+  background-color: rgba(70, 110, 84, .8);
+  color: black;
+  border-radius: 10px;
+}
+.site-overview {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+}
+
+.header {
+  position: relative;
+  left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(227, 235, 229, .7);
+  border-radius: 10px;
+  padding: .7rem;
+}
+
+.site-overview {
+  margin: 2rem;
+  border-radius: 10px;
+  padding: .7rem;
+  background-color: rgba(227, 235, 229, .7);
+}
+
+.title {
+  margin-right: 3rem;
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+}
