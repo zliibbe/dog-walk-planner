@@ -9,6 +9,7 @@
   box-shadow: 0 0 0 3px white;
   transform: scale(1.03);
 }
+
 .site-overview {
   display: flex;
   flex-direction: column;

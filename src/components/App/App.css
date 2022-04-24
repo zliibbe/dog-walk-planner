@@ -43,6 +43,7 @@ body {
   width: 100%;
   background: url(https://images.unsplash.com/photo-1600354279787-0a726615ef44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80);
   background-repeat: no-repeat;
+  background-size: 100% auto;
   background-position-y: -400px;/*leave pos-y and change pos-x on break points*/
   height: 20%;
   display: flex;
