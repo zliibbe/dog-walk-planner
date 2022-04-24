@@ -1,5 +1,7 @@
 import React from 'react'
 import './WeeklyForecast.css'
+import Form from '../Form/Form'
+
 var dayjs = require('dayjs')
 
 class WeeklyForecast extends React.Component {
@@ -18,7 +20,7 @@ class WeeklyForecast extends React.Component {
     const weatherDays = this.props.forecast.map (day =>{
       const dayKey = day.date
       const findSelectedDay = this.props.selectedDays.findIndex(activeDay => activeDay.date === dayKey)
-      const findRecommendedDay = this.props.recommendedDays.findIndex(recDay => recDay.date == dayKey)
+      const findRecommendedDay = this.props.recommendedDays.findIndex(recDay => recDay.date === dayKey)
       
       return (
         <div className={`day-container ${(findSelectedDay === -1) ? '' : 'active'} ${(findRecommendedDay === -1) ? '' : 'recommended'}`} key={day.date} id={day.date} tabIndex={0} onClick={(event) => this.props.selectDay(event.currentTarget.id)}>
@@ -34,14 +36,26 @@ class WeeklyForecast extends React.Component {
   })
 
     return (
+      <>
+    <Form addNumber={this.props.addNumber} error={this.props.state.error} recommendDays={this.props.recommendDays}/>
+
+    <div className="user-display-day-number">
+      {this.state.numberOfDays!==0 && <p className="number-of-days">Please select {this.state.numberOfDays} days: </p>}
+       <p className="error-msg" onMouseOver={()=> this.setState({error: false})}>{this.state.error && 'Please enter number of days.'}</p>
+      <div></div>
+    </div>
+    <div className="weekly-forecast">
+    </div>
+    
+      <div 
+        className="add-to-my-walks" 
+        onClick={() => {this.props.addFavoriteDays()}}>
+          Add to My Walks
+      </div>
       <section className="weekly-calendar">
         {weatherDays}
-        <div 
-          className="add-to-my-walks" 
-          onClick={() => {this.props.addFavoriteDays()}}>
-            Add to My Walks
-        </div>
       </section>
+      </>
     )
   }
 }

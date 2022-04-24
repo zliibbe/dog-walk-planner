@@ -10,8 +10,7 @@ class Form extends React.Component {
   handleChange = (event) => {
     this.setState({ numberOfDays: [event.target.value] });//set Form's numberofDays
     this.props.addNumber(event.target.value) // set App's numberOfDays
-    setTimeout(() => this.props.recommendDays(this.state.numberOfDays)
-    , 250)
+    this.props.recommendDays(event.target.value)
   };
 
   render() {
