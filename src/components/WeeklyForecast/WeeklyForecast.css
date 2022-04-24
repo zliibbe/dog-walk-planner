@@ -45,3 +45,11 @@
   margin: -1rem 0 1rem 18rem;
   height: 24px;
 }
+
+.add-to-my-walks {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: green;
+  width: 11rem;
+}
