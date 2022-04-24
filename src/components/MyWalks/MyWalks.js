@@ -22,7 +22,8 @@ const MyWalks = ({ favoriteDays }) => {
             <hr />  
             <p className="temp-high">High: {Math.round(day.day.maxtemp_f)}°</p>
             <p className="temp-low">Low: {Math.round(day.day.mintemp_f)}°</p>
-
+            <p className="sunrise">Sunrise: {day.astro.sunrise}</p>
+            <p className="sunset">Sunrise: {day.astro.sunset}</p>
            </div>
         )
       })
