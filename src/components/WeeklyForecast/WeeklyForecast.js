@@ -1,7 +1,6 @@
 import React from 'react'
 import './WeeklyForecast.css'
 import Form from '../Form/Form'
-
 var dayjs = require('dayjs')
 
 class WeeklyForecast extends React.Component {
@@ -24,9 +23,11 @@ class WeeklyForecast extends React.Component {
       
       return (
         <div className={`day-container ${(findSelectedDay === -1) ? '' : 'active'} ${(findRecommendedDay === -1) ? '' : 'recommended'}`} key={day.date} id={day.date} tabIndex={0} onClick={(event) => this.props.selectDay(event.currentTarget.id)}>
-          <p className="day-of-week">{dayjs(day.date).format('dd').toUpperCase()}</p>
-          <p className="month">{dayjs(day.date).format('MMMM').toUpperCase()}</p>
-          <p className="date">{dayjs(day.date).format('DD')}</p>
+          <div className='date-display'>
+            <p className="day-of-week">{dayjs(day.date).format('dd').toUpperCase()}</p>
+            <p className="month">{dayjs(day.date).format('MMMM').toUpperCase()}</p>
+            <p className="date">{dayjs(day.date).format('DD')}</p>
+          </div>
           <hr />  
           <img className= "icon" src={day.day.condition.icon} alt="weather-icon"></img>
           <p className="icon-text">{day.day.condition.text}</p>
@@ -43,6 +44,7 @@ class WeeklyForecast extends React.Component {
         addNumber={this.props.addNumber} 
         error={this.props.error} 
         recommendDays={this.props.recommendDays}
+        numberOfDays={this.props.numberOfDays}
       />
 
       <div className="user-display-day-number">
@@ -51,11 +53,11 @@ class WeeklyForecast extends React.Component {
         {this.props.error && 'Please enter number of days.'}</p>
       </div>
       {this.props.numberOfDays!==0 && <div className='instructions-add-walks-button'>
-           <p className="number-of-days">Please select {this.props.numberOfDays} days below. A ⭐️ indicates a recommended day: </p>
+           <p className="number-of-days">Please select {this.props.numberOfDays} days below. (A ⭐️  indicates a recommended day): </p>
           <div 
             className="add-to-my-walks-button" 
             onClick={() => {this.props.addFavoriteDays()}}>
-              Add Selected Walks to My Walks
+              Save Selected as My Walks
           </div>
         </div>}
         <section className="weekly-calendar">
