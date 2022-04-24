@@ -13,3 +13,19 @@
   margin: 0;
   width: 7rem;
 }
+
+.submit-days-button {
+  border: none;
+  background-color: rgba(70, 110, 84, .8);
+  color: black;
+  border-radius: 10px;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.submit-days-button:hover,
+.submit-days-button:focus,
+.submit-days-button:focus-visible {
+  border: 2px solid white;
+  transform: scale(1.03);
+}
