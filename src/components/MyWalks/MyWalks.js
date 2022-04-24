@@ -16,18 +16,9 @@ const MyWalks = ({ favoriteDays }) => {
         </div> 
   })
   return(
-  <div className="my-walk">
-    <section className="my-walks-container">
-      <section className="my-walks-header">
-        <h1 className="title">Dog Walk Planner</h1>
-        <p className="walking-days">I'm walking {`${favoriteDays.length}`} days this week.</p>
-      </section>
       <section className="my-walks-display">
         {days}
       </section>
-      <NavLink to="/" className="nav">Home</NavLink>
-    </section>
-  </div>
   )
 }
 
