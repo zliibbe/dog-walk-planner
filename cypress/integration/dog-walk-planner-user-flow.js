@@ -228,17 +228,50 @@ describe('dog walk app with suggestions based on weather', () => {
 
   it('displays weather cards with weather information starting at the current day', () => {
     cy.get(".day-container").first().within(() => {
-      cy.get('.day-of-week').should('have.text', 'number')
-
+      cy.get('.day-of-week').should('have.text', 'SU')
+      .get('.month').should('have.text', 'APRIL')
+      .get('.date').should('have.text', '24')
+      .get(".icon").should('exist')
+      .get(".icon-text").should('have.text', 'Moderate rain')
+      .get('.temp-high').should('have.text', 'High: 45°')
+      .get('.temp-low').should('have.text', 'Low: 22°')
     })
   })
 
   it('has a form that allows the user to enter the number of days they want to walk this week', () => {
     cy.get(".form-label")
     .contains("Number of days I want to walk my dog this week:")
-    .get("input")
+    .get("input").clear()
     .type("2")
-    .get(".number-of-days-form").click()
+    .get(".submit-days-button").click()
+    .get(".number-of-days").contains('Please select 2 days below ( ⭐️ indicates a recommended day) and add to My Walks:')
+    
+
+  })
+
+  it('allows the user to add selected days to My Walks and the user can navigate to a page to see the walks they saved', () => {
+    cy.get(".form-label")
+    .contains("Number of days I want to walk my dog this week:")
+    .get("input").clear()
+    .type("2")
+    .get(".submit-days-button").click()
+    .get("#2022-04-27").should("have.class", "recommended").click()
+    .get("#2022-04-28").should("have.class", "recommended").click()
+    .get(".add-to-my-walks-button").click()
+    .get(".number-of-days").should('not.exist')
+    .get(".myWalks").click()
+    .get("#2022-04-27").should('exist')
+    .get("#2022-04-28").should('exist')
+  })
+
+  it('should display an error message if selecting days before submitting form', () => {
+    cy.get("#2022-04-25").click()
+    .get(".error-msg").should("exist")
+  })
+
+  it('should display message directing user back to home page if user clicks My Walks before selecting walks', () => {
+    cy.get(".myWalks").click()
+    .get(".no-days-msg").contains("You have not added any days yet. Go home to add days.")
   })
 
 })
