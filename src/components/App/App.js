@@ -56,11 +56,6 @@ class App extends React.Component {
   }
 
   addFavoriteDays = () => {
-    // error Handling for btn click (@0130)
-    // if(!this.state.selectedDays || this.state.selectedDays !== this.state.numberOfDays){
-    //   console.log("Please Select Day")
-    //   return
-    // }
     this.setState({
       favoriteDays: this.state.selectedDays,
       numberOfDays: 0,
@@ -105,13 +100,13 @@ class App extends React.Component {
                 return (
                       <WeeklyForecast
                         forecast={this.state.forecast}
-                        numberOfDays={this.state.numberOfDays}
+                        numberOfDays={this.state.numberOfDays}//
                         selectedDays={this.state.selectedDays}
                         recommendedDays={this.state.recommendedDays}
                         selectDay={this.selectDay}
                         addFavoriteDays={this.addFavoriteDays}
-                        recommendDays={this.recommendDays}
-                        addNumber={this.addNumber} 
+                        recommendDays={this.recommendDays}//
+                        addNumber={this.addNumber} //
                         error={this.state.error} 
                         resetError={this.resetError}
                       />
