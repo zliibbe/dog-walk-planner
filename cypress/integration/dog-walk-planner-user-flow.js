@@ -214,12 +214,31 @@ describe('dog walk app with suggestions based on weather', () => {
       }
       ]
       }
-      })
-
+      }).as('get-weather-data')
   })
 
-  it('displays a home page with a header', () => {
+  it('displays a home page with a header with buttons and shows a site overview on load', () => {
+    cy.get(".title")
+    .contains("Dog Walk Planner")
+    .get(".nav")
+    .contains("Home")
+    .get(".site-overview")
+    .contains("You're busy, but want the best for your dog.")
+  })
 
+  it('displays weather cards with weather information starting at the current day', () => {
+    cy.get(".day-container").first().within(() => {
+      cy.get('.day-of-week').should('have.text', 'number')
+
+    })
+  })
+
+  it('has a form that allows the user to enter the number of days they want to walk this week', () => {
+    cy.get(".form-label")
+    .contains("Number of days I want to walk my dog this week:")
+    .get("input")
+    .type("2")
+    .get(".number-of-days-form").click()
   })
 
 })
