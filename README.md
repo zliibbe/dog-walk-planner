@@ -35,6 +35,10 @@ See the [wireframe](https://www.figma.com/file/Aq7DLHl5hxPLkK8JkoGku4/Dog-Walker
 ## Future Additions
 * Allow user to enter their zip code for location
 * Allow user to select starting date for display
+* Make weather recommendation logic more robust
+* Incorporate current weather for location into page display
+* Allow user to select categories (e.g. sunrise, sunset, precipitation chance) to include on My Walks page
+* Enable local storage for site so user can revisit and see their selections
 
 * ## Credits
 Authors: [Zach Liibbe](https://github.com/zliibbe)
