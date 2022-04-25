@@ -89,12 +89,45 @@ hr {
 .add-to-my-walks-button {
   display: flex;
   align-items: flex-start;
-  /* display: block;
-  margin: auto; */
   text-align: center;
   border-radius: 10px;
   background-color: rgba(70, 110, 84, 0.7);
   width: 20rem;
   padding: 5px;
   margin-right: 0.7em;
+}
+
+@media screen and (max-width: 625px) {
+  .weekly-calendar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .day-container {
+    opacity: .8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 20vh;
+    width: 100%;
+    
+    border-radius: 10px;
+    margin: .8rem .2rem .8rem .2rem ;
+    padding: .2rem;
+  }
+
+  hr {
+    transform: rotate(90deg);
+  }
+
+  .date-display {
+    margin-left: 1rem;
+  }
+
+  .temp-low {
+    margin-right: 1rem;
+  }
+
 }
