@@ -9,7 +9,7 @@ const Layout = (props) => {
       <section className="header">
       <h1 className="title">Dog Walk Planner</h1>
       <NavLink to="/" className="nav">Home</NavLink>
-      <NavLink to="/myWalks" className="nav">My Walks</NavLink>
+      <NavLink to="/myWalks" className="nav myWalks">My Walks</NavLink>
       </section>
       <p className="site-overview">
       You're busy, but want the best for your dog. And you don't

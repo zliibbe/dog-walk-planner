@@ -45,3 +45,41 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+
+@media screen and (max-width: 625px) {
+  .my-walks-display {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body .day-container {
+    opacity: .8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 20vh;
+    width: 100%;
+    
+    border-radius: 10px;
+    margin: .8rem .2rem .8rem .2rem ;
+    padding: .2rem;
+  }
+
+  .icon-text {
+    display: none;
+  }
+
+  hr {
+    transform: rotate(90deg);
+  }
+
+  .date-display {
+    margin-left: 1rem;
+  }
+
+  .temp-low {
+    margin-right: 1rem;
+  }
+}
