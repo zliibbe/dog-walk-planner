@@ -23,6 +23,11 @@ This app allows for a user to look up weather for the week ahead and pick the be
 ![dog-walk-planner-error testig](https://user-images.githubusercontent.com/63659270/165007363-ee85c748-27b3-4883-af2a-d3beddb0cf69.gif)
 
 
+## Cypress Testing
+
+App passes all user flows in Cypress:
+![dog-walk-planner-cypress-testing](https://user-images.githubusercontent.com/63659270/165018884-ba5397f3-ccb1-4ee1-af15-8b21aae2477d.gif)
+
 ## Figma Wireframe
 
 See the [wireframe](https://www.figma.com/file/Aq7DLHl5hxPLkK8JkoGku4/Dog-Walker-Planner?node-id=0%3A1) on Figma.
