@@ -1,6 +1,7 @@
 import React from 'react'
 import './WeeklyForecast.css'
 import Form from '../Form/Form'
+import PropTypes from 'prop-types';
 var dayjs = require('dayjs')
 
 class WeeklyForecast extends React.Component {
@@ -69,3 +70,15 @@ class WeeklyForecast extends React.Component {
 }
 
 export default WeeklyForecast
+
+WeeklyForecast.propTypes = {
+  addNumber: PropTypes.func.isRequired,
+  recommendedDays: PropTypes.array.isRequired,
+  numberOfDays: PropTypes.number,
+  forecast: PropTypes.array.isRequired,
+  selectedDays: PropTypes.array.isRequired,
+  selectDay: PropTypes.func.isRequired,
+  addFavoriteDays: PropTypes.func.isRequired,
+  error: PropTypes.bool.isRequired,
+  resetError: PropTypes.func.isRequired
+}

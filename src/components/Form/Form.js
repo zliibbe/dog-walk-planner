@@ -1,5 +1,6 @@
 import React from "react";
 import "./Form.css";
+import PropTypes from 'prop-types';
 
 class Form extends React.Component {
   constructor(props) {
@@ -40,3 +41,9 @@ class Form extends React.Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  addNumber: PropTypes.func.isRequired,
+  recommendDays: PropTypes.func.isRequired,
+  numberOfDays: PropTypes.number.isRequired
+}

@@ -1,5 +1,6 @@
 import React from "react"
 import './MyWalks.css'
+import PropTypes from 'prop-types';
 var dayjs = require('dayjs')
 
 const MyWalks = ({ favoriteDays }) => {
@@ -28,7 +29,7 @@ const MyWalks = ({ favoriteDays }) => {
         )
       })
     }
-  return(
+  return (
       <section className="my-walks-display">
         {days}
       </section>
@@ -36,3 +37,7 @@ const MyWalks = ({ favoriteDays }) => {
 }
 
 export default MyWalks
+
+MyWalks.propTypes = {
+  favoriteDays: PropTypes.func.isRequired
+}
