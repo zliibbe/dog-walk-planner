@@ -40,7 +40,7 @@ See the [wireframe](https://www.figma.com/file/Aq7DLHl5hxPLkK8JkoGku4/Dog-Walker
 * Allow user to select categories (e.g. sunrise, sunset, precipitation chance) to include on My Walks page
 * Enable local storage for site so user can revisit and see their selections
 
-* ## Credits
+## Credits
 Authors: [Zach Liibbe](https://github.com/zliibbe)
 
 
