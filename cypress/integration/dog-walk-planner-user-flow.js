@@ -255,10 +255,23 @@ describe('dog walk app with suggestions based on weather', () => {
     .get("input").clear()
     .type("2")
     .get(".submit-days-button").click()
-    .get("#2022-04-27").should("have.class", "recommended")
-    .get("#2022-04-28").should("have.class", "recommended")
+    .get("#2022-04-27").should("have.class", "recommended").click()
+    .get("#2022-04-28").should("have.class", "recommended").click()
     .get(".add-to-my-walks-button").click()
-    
+    .get(".number-of-days").should('not.exist')
+    .get(".myWalks").click()
+    .get("#2022-04-27").should('exist')
+    .get("#2022-04-28").should('exist')
+  })
+
+  it('should display an error message if selecting days before submitting form', () => {
+    cy.get("#2022-04-25").click()
+    .get(".error-msg").should("exist")
+  })
+
+  it('should display message directing user back to home page if user clicks My Walks before selecting walks', () => {
+    cy.get(".myWalks").click()
+    .get(".no-days-msg").contains("You have not added any days yet. Go home to add days.")
   })
 
 })
