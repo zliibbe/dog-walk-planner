@@ -1,73 +1,34 @@
-# dog-walk-planner
-This app allows for a user to look up weather for the week ahead and pick the best days to walk one's dog
+# Dog Walk Planner
+This app allows for a user to look up weather for the week ahead and pick the best days to walk one's dog. [Dog Walk Planner](https://weather-walker.herokuapp.com/) is an app that allows the user to look at the upcoming week and see recommendations for walking their dog based on weather received from an API. See this gif for how the site works:
+![dog-walk-planner-user-flow](https://user-images.githubusercontent.com/63659270/165007351-99d65803-ed0c-4621-901b-281e9b5744fb.gif)
 
-# Getting Started with Create React App
+## Learning Goals
+* Gain comfort in implementing a site using React Fundamentals
+* Gaid confidence in writing E2E user testing
+* Gain a deeper understanding of React's flow of information
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies
+* React.js
+* React Router (v5)
+* CSS
+* HTML / JSX
+* Cypress
+* REST API
+* DayJS
+* Figma
 
-## Available Scripts
+### Error Handling
+![dog-walk-planner-error testig](https://user-images.githubusercontent.com/63659270/165007363-ee85c748-27b3-4883-af2a-d3beddb0cf69.gif)
 
-In the project directory, you can run:
+## Figma Wireframe
 
-### `npm start`
+See the [wireframe](https://www.figma.com/file/Aq7DLHl5hxPLkK8JkoGku4/Dog-Walker-Planner?node-id=0%3A1) on Figma.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Future Additions
+* Allow user to enter their zip code for location
+* Allow user to select starting date for display
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* ## Credits
+Authors: [Zach Liibbe](https://github.com/zliibbe)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project spec -> [here](https://frontend.turing.edu/projects/module-3/showcase.html)
