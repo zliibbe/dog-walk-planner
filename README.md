@@ -1,5 +1,5 @@
 # Dog Walk Planner
-This app allows for a user to look up weather for the week ahead and pick the best days to walk one's dog. [Dog Walk Planner](https://weather-walker.herokuapp.com/) is an app that allows the user to look at the upcoming week and see recommendations for walking their dog based on weather received from an API. See this gif for how the site works:
+This app allows for a user to look up weather for the week ahead and pick the best days to walk one's dog. [Dog Walk Planner](https://weather-walker.herokuapp.com/) (<-- Deployed Link) is an app that allows the user to look at the upcoming week and see recommendations for walking their dog based on weather received from an API. See this gif for how the site works:
 
 ![dog-walk-planner-user-flow](https://user-images.githubusercontent.com/63659270/165007351-99d65803-ed0c-4621-901b-281e9b5744fb.gif)
 
