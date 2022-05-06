@@ -1,7 +1,7 @@
 describe('dog walk app with suggestions based on weather', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
-    cy.intercept("GET", "https://api.weatherapi.com/v1/forecast.json?key=ccaf26f488134742923150520221604&q=80904&days=7&alerts=no", {
+    cy.intercept("GET", `https://api.weatherapi.com/v1/forecast.json?key=ccaf26f488134742923150520221604&q=80904&days=7&alerts=no`, {
       "location": {
       "name": "Colorado Springs",
       "region": "Colorado",
@@ -245,8 +245,6 @@ describe('dog walk app with suggestions based on weather', () => {
     .type("2")
     .get(".submit-days-button").click()
     .get(".number-of-days").contains('Please select 2 days below ( ⭐️ indicates a recommended day) and add to My Walks:')
-    
-
   })
 
   it('allows the user to add selected days to My Walks and the user can navigate to a page to see the walks they saved', () => {
