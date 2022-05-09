@@ -1,7 +1,7 @@
 describe('dog walk app with suggestions based on weather', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
-    cy.intercept("GET", `https://api.weatherapi.com/v1/forecast.json?key=ccaf26f488134742923150520221604&q=80904&days=7&alerts=no`, {
+    cy.intercept("GET", `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=80904&days=7&alerts=no`, {
       "location": {
       "name": "Colorado Springs",
       "region": "Colorado",
