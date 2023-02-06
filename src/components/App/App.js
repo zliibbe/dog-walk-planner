@@ -67,7 +67,7 @@ class App extends React.Component {
 
   fetchSevenDayForecast = () => {
     const fetchSevenDayForecast = fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=80904&days=7&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=ccaf26f488134742923150520221604&q=80904&days=7&alerts=no`
     )
       .then((response) => {
         if (response.status === 404) {
